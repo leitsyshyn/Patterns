@@ -18,7 +18,7 @@ namespace Prototype
                 clonedFigure = figure.Clone();
                 figure.GetInfo();
                 clonedFigure.GetInfo();
-                figure = new Triangle(3, 4, 5);
+                figure = new Triangle(3, 4, 7);
                 clonedFigure = figure.Clone();
                 figure.GetInfo();
                 clonedFigure.GetInfo();

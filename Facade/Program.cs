@@ -14,7 +14,7 @@ namespace Facade
     }
 
     //SubsystemClassB
-    public class Thermostat
+    public class ClimateControl
     {
         public void SetTemperature(int temperature) => Console.WriteLine($"Встановлення температури на {temperature}°C");
     }
@@ -37,14 +37,14 @@ namespace Facade
     public class SmartHomeFacade
     {
         private readonly Lights _lights;
-        private readonly Thermostat _thermostat;
+        private readonly ClimateControl _climateControl;
         private readonly SecuritySystem _security;
         private readonly SprinklerSystem _sprinklers;
 
-        public SmartHomeFacade(Lights lights, Thermostat thermostat, SecuritySystem security, SprinklerSystem sprinklers)
+        public SmartHomeFacade(Lights lights, ClimateControl thermostat, SecuritySystem security, SprinklerSystem sprinklers)
         {
             _lights = lights;
-            _thermostat = thermostat;
+            _climateControl = thermostat;
             _security = security;
             _sprinklers = sprinklers;
         }
@@ -53,7 +53,7 @@ namespace Facade
         {
             Console.WriteLine("\nПідготовка до виходу з дому...");
             _lights.TurnOff();
-            _thermostat.SetTemperature(18);
+            _climateControl.SetTemperature(18);
             _security.Arm();
             _sprinklers.Deactivate();
             Console.WriteLine("Будинок захищений, Ви можете йти\n");
@@ -63,7 +63,7 @@ namespace Facade
         {
             Console.WriteLine("\nЛаскаво просимо додому!");
             _lights.TurnOn();
-            _thermostat.SetTemperature(22);
+            _climateControl.SetTemperature(22);
             _security.Disarm();
             _sprinklers.Activate();
             Console.WriteLine("Будинок готовий для Вас\n");
@@ -77,7 +77,7 @@ namespace Facade
         {
             Console.OutputEncoding = Encoding.UTF8;
             Lights lights = new Lights();
-            Thermostat thermostat = new Thermostat();
+            ClimateControl thermostat = new ClimateControl();
             SecuritySystem security = new SecuritySystem();
             SprinklerSystem sprinklers = new SprinklerSystem();
 

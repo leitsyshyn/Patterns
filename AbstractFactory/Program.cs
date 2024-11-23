@@ -54,7 +54,7 @@ namespace AbstractFactory
     {
         public override void GetPower()
         {
-            Console.WriteLine("Ford Engine");
+            Console.WriteLine("Ford Engine 4.4");
         }
     }
 
@@ -63,7 +63,7 @@ namespace AbstractFactory
     {
         public override void GetPower()
         {
-            Console.WriteLine("Toyota Engine");
+            Console.WriteLine("Toyota Engine 3.2");
         }
     }
 
@@ -72,7 +72,7 @@ namespace AbstractFactory
     {
         public override void GetPower()
         {
-            Console.WriteLine("Mercedes Engine");
+            Console.WriteLine("Mercedes Engine 2.4");
         }
     }
 
